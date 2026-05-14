@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="shortcut icon"
+      href="data:image/png;base64,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"
+      type="image/x-icon"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exam 🥲 ahh</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header__top">
+        <div class="header__top--time">
+          <h3 class="header__top--date">
+            Mon-Thu: <span> 9:00 AM - 5:30 PM</span>
+          </h3>
+        </div>
+        <div class="header__top--contact">
+          <p class="top__contact--text">
+            Visit our showroom in 1234 Street Adress City Address, 1234 Contact
+            Us
+          </p>
+        </div>
+        <div class="header__top--media">
+          <p class="top__media--text">Call Us: (00) 1234 5678</p>
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+      </div>
+      <div class="header__bottom">
+        <nav>
+          <ul class="header__bottom--link">
+            <img src="./images/Vector 24.png" alt="" />
+            <li>
+              <a class="header__bottom--links" href="#">Laptops</a>
+            </li>
+            <li>
+              <a class="header__bottom--links" href="#">Desktop PCs</a>
+            </li>
+            <li>
+              <a class="header__bottom--links" href="#">Networking Devices</a>
+            </li>
+            <li>
+              <a class="header__bottom--links" href="#">Printers & Scanners</a>
+            </li>
+            <li>
+              <a class="header__bottom--links" href="#">PC Parts </a>
+            </li>
+            <li>
+              <a class="header__bottom--links" href="#">All Other Products</a>
+            </li>
+            <li>
+              <a class="header__bottom--links" href="#">Repairs</a>
+            </li>
+            <button class="header__bottom--btn">Our Deals</button>
+          </ul>
+        </nav>
+        <div class="header__bottom--icons">
+          <i class="fa-solid fa-search"></i>
+          <i class="fa-solid fa-shopping-cart"></i>
+        </div>
+      </div>
+    </header>
+    <div class="img__section">
+      <img src="./images/Group 56.png" alt="" />
+    </div>
+    <section class="new">
+      <div class="new__header">
+        <h2 class="new__header--title">New Products</h2>
+        <a class="new__header--link" href="#">See All New Products</a>
+      </div>
+      <div class="new__boxes">
+        <div class="new__boxes--card">
+          <img class="boxes__card--img" src="./images/image 29.png" alt="img" />
+          <img class="boxes__card--img2" src="./images/Rating.png" alt="img" />
+          <h2 class="boxes__card--title">
+            EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...
+          </h2>
+          <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+        </div>
+        <div class="new__boxes--card">
+          <img class="boxes__card--img" src="./images/image 29 (1).png" alt="img" />
+          <img class="boxes__card--img2" src="./images/Rating.png" alt="img" />
+          <h2 class="boxes__card--title">
+            EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...
+          </h2>
+          <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+        </div>
+        <div class="new__boxes--card">
+          <img class="boxes__card--img" src="./images/image 29.png" alt="img" />
+          <img class="boxes__card--img2" src="./images/Rating.png" alt="img" />
+          <h2 class="boxes__card--title">
+            EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...
+          </h2>
+          <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+        </div>
+        <div class="new__boxes--card">
+           <img class="boxes__card--img" src="./images/image 29.png" alt="img" />
+           <img class="boxes__card--img2" src="./images/Rating.png" alt="img" />
+           <h2 class="boxes__card--title">
+             EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...
+           </h2>
+           <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+         </div>
+       </div>
+      </div>
+    </section>
+    <section class="products">
+  <div class="products__container">
+    <div class="products__row">
+      <div class="products__banner">
+        <img class="section__banner--img" src="./images/Component 6.png" alt="img">
+        <img src="./images/Component 7.png" alt="img">
+        <img src="./images/Component 10.png" alt="img">
+        <img src="./images/image 30.png" alt="">
+      </div>
+      <div class="products__cards">
+        <div class="product-card">
+          <div class="product-card__image">
+            <img src="./images/image 29 (2).png" alt="">
+          </div>
+          <div class="product-card__content">            <h3 class="product-card__title">
+              EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-On...
+            </h3>
+            <div class="product-card__price-box">
+              <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-card__image">
+            <img src="./images/image 29 (3).png" alt="">
+          </div>
+          <div class="product-card__content">            <h3 class="product-card__title">
+              EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-On...
+            </h3>
+            <div class="product-card__price-box">
+              <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-card__image">
+            <img src="./images/image 29 (4).png" alt="">
+          </div>
+          <div class="product-card__content">            <h3 class="product-card__title">
+              EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-On...
+            </h3>
+            <div class="product-card__price-box">
+              <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-card__image">
+            <img src="./images/image 29 (5).png" alt="">
+          </div>
+          <div class="product-card__content">
+            <h3 class="product-card__title">
+              EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-On...
+            </h3>
+
+            <div class="product-card__price-box">
+              <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-card__image">
+            <img src="./images/image 29 (6).png" alt="">
+          </div>
+
+          <div class="product-card__content">
+            <h3 class="product-card__title">
+              EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-On...
+            </h3>
+
+            <div class="product-card__price-box">
+              <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-card__image">
+            <img src="./images/image 29 (3).png" alt="">
+          </div>
+          <div class="product-card__content">            <h3 class="product-card__title">
+              EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-On...
+            </h3>
+            <div class="product-card__price-box">
+              <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+            </div>
+          </div>
+        </div><div class="product-card">
+          <div class="product-card__image">
+            <img src="./images/image 29 (3).png" alt="">
+          </div>
+          <div class="product-card__content">            <h3 class="product-card__title">
+              EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-On...
+            </h3>
+            <div class="product-card__price-box">
+              <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+            </div>
+          </div>
+        </div><div class="product-card">
+          <div class="product-card__image">
+            <img src="./images/image 29 (3).png" alt="">
+          </div>
+          <div class="product-card__content">            <h3 class="product-card__title">
+              EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-On...
+            </h3>
+            <div class="product-card__price-box">
+              <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+            </div>
+          </div>
+        </div><div class="product-card">
+          <div class="product-card__image">
+            <img src="./images/image 29 (3).png" alt="">
+          </div>
+          <div class="product-card__content">            <h3 class="product-card__title">
+              EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-On...
+            </h3>
+            <div class="product-card__price-box">
+              <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+            </div>
+          </div>
+        </div><div class="product-card">
+          <div class="product-card__image">
+            <img src="./images/image 29 (3).png" alt="">
+          </div>
+          <div class="product-card__content">            <h3 class="product-card__title">
+              EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-On...
+            </h3>
+            <div class="product-card__price-box">
+              <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+            </div>
+          </div>
+        </div><div class="product-card">
+          <div class="product-card__image">
+            <img src="./images/image 29 (3).png" alt="">
+          </div>
+          <div class="product-card__content">            <h3 class="product-card__title">
+              EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-On...
+            </h3>
+            <div class="product-card__price-box">
+              <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+            </div>
+          </div>
+        </div><div class="product-card">
+          <div class="product-card__image">
+            <img src="./images/image 29 (3).png" alt="">
+          </div>
+          <div class="product-card__content">            <h3 class="product-card__title">
+              EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-On...
+            </h3>
+            <div class="product-card__price-box">
+              <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+            </div>
+          </div>
+        </div><div class="product-card">
+          <div class="product-card__image">
+            <img src="./images/image 29 (3).png" alt="">
+          </div>
+          <div class="product-card__content">            <h3 class="product-card__title">
+              EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-On...
+            </h3>
+            <div class="product-card__price-box">
+              <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+            </div>
+          </div>
+        </div><div class="product-card">
+          <div class="product-card__image">
+            <img src="./images/image 29 (3).png" alt="">
+          </div>
+          <div class="product-card__content">            <h3 class="product-card__title">
+              EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-On...
+            </h3>
+            <div class="product-card__price-box">
+              <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+            </div>
+          </div>
+        </div><div class="product-card">
+          <div class="product-card__image">
+            <img src="./images/image 29 (3).png" alt="">
+          </div>
+          <div class="product-card__content">            <h3 class="product-card__title">
+              EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-On...
+            </h3>
+            <div class="product-card__price-box">
+              <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+            </div>
+          </div>
+        </div><div class="product-card">
+          <div class="product-card__image">
+            <img src="./images/image 29 (3).png" alt="">
+          </div>
+          <div class="product-card__content">            <h3 class="product-card__title">
+              EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-On...
+            </h3>
+            <div class="product-card__price-box">
+              <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+            </div>
+          </div>
+        </div><div class="product-card">
+          <div class="product-card__image">
+            <img src="./images/image 29 (3).png" alt="">
+          </div>
+          <div class="product-card__content">            <h3 class="product-card__title">
+              EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-On...
+            </h3>
+            <div class="product-card__price-box">
+              <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+            </div>
+          </div>
+        </div><div class="product-card">
+          <div class="product-card__image">
+            <img src="./images/image 29 (3).png" alt="">
+          </div>
+          <div class="product-card__content">            <h3 class="product-card__title">
+              EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-On...
+            </h3>
+            <div class="product-card__price-box">
+              <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+            </div>
+          </div>
+        </div><div class="product-card">
+          <div class="product-card__image">
+            <img src="./images/image 29 (3).png" alt="">
+          </div>
+          <div class="product-card__content">            <h3 class="product-card__title">
+              EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-On...
+            </h3>
+            <div class="product-card__price-box">
+              <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+            </div>
+          </div>
+        </div><div class="product-card">
+          <div class="product-card__image">
+            <img src="./images/image 29 (3).png" alt="">
+          </div>
+          <div class="product-card__content">            <h3 class="product-card__title">
+              EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-in-On...
+            </h3>
+            <div class="product-card__price-box">
+              <span class="product-card__old-price">$499.00</span>
+              <span class="product-card__price">$499.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+  <div class="imgs">
+    <img src="./images/image 33.png" alt="img">
+    <img src="./images/image 33 (1).png" alt="img">
+    <img src="./images/image 33 (2).png" alt="img">
+    <img src="./images/image 33 (3).png" alt="img">
+  <img src="./images/image 33 (5).png" alt="img">
+  <img src="./images/image 33 (6).png" alt="img">
+  <img src="./images/image 33 (7).png" alt="img">
+  </div>
+  <section class="instagram">
+    <h2 class="instagram__title">
+      Follow us on Instagram for News, Offers & More
+    </h2>
+
+    <div class="instagram__cards">
+      <div class="instagram__card">
+        <img src="./images/image 29 (7).png" alt="" class="img">
+
+        <p class="instagram__text">
+          If you've recently made a desktop PC or laptop purchase, you might
+          want to consider adding peripherals to enhance your home office
+          setup, your gaming rig, or your business workspace...
+        </p>
+
+        <span class="instagram__date">01.09.2020</span>
+      </div>
+
+      <div class="instagram__card">
+        <img src="./images/image 29 (8).png" alt="" class="img">
+
+        <p class="instagram__text">
+          If you've recently made a desktop PC or laptop purchase, you might
+          want to consider adding peripherals to enhance your home office
+          setup, your gaming rig, or your business workspace...
+        </p>
+
+        <span class="instagram__date">01.09.2020</span>
+      </div>
+
+      <div class="instagram__card">
+        <img src="./images/image 29 (9).png" alt="" class="img">
+
+        <p class="instagram__text">
+          If you've recently made a desktop PC or laptop purchase, you might
+          want to consider adding peripherals to enhance your home office
+          setup, your gaming rig, or your business workspace...
+        </p>
+
+        <span class="instagram__date">01.09.2020</span>
+      </div>
+
+      <div class="instagram__card">
+        <img src="./images/image 29 (9).png" alt="" class="img">
+
+        <p class="instagram__text">
+          If you've recently made a desktop PC or laptop purchase, you might
+          want to consider adding peripherals to enhance your home office
+          setup, your gaming rig, or your business workspace...
+        </p>
+
+        <span class="instagram__date">01.09.2020</span>
+      </div>
+      <div class="instagram__card">
+        <img src="./images/image 29 (9).png" alt="" class="img">
+        <p class="instagram__text">
+          If you've recently made a desktop PC or laptop purchase, you might
+          want to consider adding peripherals to enhance your home office
+          setup, your gaming rig, or your business workspace...
+        </p>
+        <span class="instagram__date">01.09.2020</span>
+      </div>
+      <div class="instagram__card">
+        <img src="./images/image 29 (9).png" alt="" class="img">
+        <p class="instagram__text">
+          If you've recently made a desktop PC or laptop purchase, you might
+          want to consider adding peripherals to enhance your home office
+          setup, your gaming rig, or your business workspace...
+        </p>
+        <span class="instagram__date">01.09.2020</span>
+      </div>
+      <div class="instagram__card">
+        <img src="./images/image 29 (9).png" alt="" class="img">
+        <p class="instagram__text">
+          If you've recently made a desktop PC or laptop purchase, you might
+          want to consider adding peripherals to enhance your home office
+          setup, your gaming rig, or your business workspace...
+        </p>
+        <span class="instagram__date">01.09.2020</span>
+      </div>
+      <div class="instagram__card">
+        <img src="./images/image 29 (9).png" alt="" class="img">
+        <p class="instagram__text">
+          If you've recently made a desktop PC or laptop purchase, you might
+          want to consider adding peripherals to enhance your home office
+          setup, your gaming rig, or your business workspace...
+        </p>
+        <span class="instagram__date">01.09.2020</span>
+      </div>
+    </div>
+</section>
+  <section class="testimonial">
+  <div class="testimonial__container">
+    
+    <div class="testimonial__top">
+      <div class="testimonial__quote">“</div>
+
+      <div class="testimonial__content">
+        <p class="testimonial__text">
+          My first order arrived today in perfect condition. From the time I sent a question about the item to making the purchase, to the shipping and now the delivery, your company, Tecs, has stayed in touch. Such great service. I look forward to shopping on your site in the future and would highly recommend it.
+        </p>
+
+      </div>
+
+      <button class="testimonial__button">
+        Leave Us A Review
+      </button>
+
+    </div>
+    <div class="testimonial__bottom">
+      <div class="testimonial__card">
+        <div class="testimonial__icon">
+          <img src="./images/bx_bx-support.png" alt="">
+        </div>
+        <h3 class="testimonial__title">
+          Product Support
+        </h3>
+        <p class="testimonial__description">
+          Up to 3 years on-site warranty available for your peace of mind.
+        </p>
+      </div>
+      <div class="testimonial__card">
+        <div class="testimonial__icon">
+          <img src="./images/ri_account-pin-circle-fill.png" alt="">
+        </div>
+        <h3 class="testimonial__title">
+          Personal Account
+        </h3>
+        <p class="testimonial__description">
+          With big discounts, free delivery and a dedicated support specialist.
+        </p>
+      </div>
+      <div class="testimonial__card">
+        <div class="testimonial__icon">
+          <img src="./images/Vector.png" alt="">
+        </div>
+        <h3 class="testimonial__title">
+          Amazing Savings
+        </h3>
+        <p class="testimonial__description">
+          Up to 70% off new Products, you can be sure of the best price.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+  <footer>
+  <div class="footer__container">
+    <div class="footer__top">
+      <div class="footer__content">
+        <h2 class="footer__heading">
+          Sign Up To Our Newsletter.
+        </h2>
+        <p class="footer__text">
+          Be the first to hear about the latest offers.
+        </p>
+      </div>
+      <form class="footer__form">
+        <input 
+          type="email" 
+          placeholder="Your Email"
+          class="footer__input"
+        >
+        <button class="footer__button">
+          Subscribe
+        </button>
+      </form>
+    </div>
+    <div class="footer__middle">
+      <div class="footer__column">
+        <h3 class="footer__title">
+          Information
+        </h3>
+        <ul class="footer__list">
+          <li class="footer__item"><a href="#" class="footer__link">About Us</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">About Zip</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Privacy Policy</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Search</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Terms</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Orders and Returns</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Contact Us</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Advanced Search</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Newsletter Subscription</a></li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h3 class="footer__title">
+          PC Parts
+        </h3>
+        <ul class="footer__list">
+          <li class="footer__item"><a href="#" class="footer__link">CPUS</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Add On Cards</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Hard Drives (Internal)</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Graphic Cards</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Keyboards / Mice</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Cases / Power Supplies / Cooling</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">RAM (Memory)</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Software</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Speakers / Headsets</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Motherboards</a></li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h3 class="footer__title">
+          Desktop PCs
+        </h3>
+        <ul class="footer__list">
+          <li class="footer__item"><a href="#" class="footer__link">Custom PCs</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Servers</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">MSI All-in-One PCs</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">HP/Compaq PCs</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">ASUS PCs</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Tecs PCs</a></li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h3 class="footer__title">
+          Laptops
+        </h3>
+        <ul class="footer__list">
+          <li class="footer__item"><a href="#" class="footer__link">Everyday Use Notebooks</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">MSI Workstation Series</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">MSI Prestige Series</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Tablets and Pads</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Netbooks</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Infinity Gaming Notebooks</a></li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h3 class="footer__title">
+          Address
+        </h3>
+        <ul class="footer__list">
+          <li class="footer__item footer__item--address">
+            Address: 1234 Street Adress City Address, 1234
+          </li>
+          <li class="footer__item footer__item--address">
+            Phones:
+            <a href="#" class="footer__link footer__link--blue">
+              (00) 1234 5678
+            </a>
+          </li>
+          <li class="footer__item footer__item--address">
+            We are open: Monday-Thursday: 9:00 AM - 5:30 PM
+          </li>
+          <li class="footer__item footer__item--address">
+            Friday: 9:00 AM - 6:00 PM
+          </li>
+          <li class="footer__item footer__item--address">
+            Saturday: 11:00 AM - 5:00 PM
+          </li>
+          <li class="footer__item footer__item--address">
+            E-mail:
+            <a href="#" class="footer__link footer__link--blue">
+              shop@gmail.com
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__socials">
+        <a href="#" class="footer__social">
+          <i class="fa-brands fa-instagram icons"></i>
+        </a>
+        <a href="#" class="footer__social">
+          <i class="fa-brands fa-facebook icons"></i>
+        </a>
+      </div>
+      <div class="footer__payments">
+        <div class="footer__payment">
+          <img src="./images/paypal.png" alt="img">
+        </div>
+        <div class="footer__payment">
+          <img src="./images/visa.png" alt="img">
+        </div>
+        <div class="footer__payment">
+          <img src="./images/ikkitadumaloq.png" alt="img">
+        </div>
+        <div class="footer__payment">
+          <img src="./images/discover.png" alt="img">
+        </div>
+        <div class="footer__payment">
+          <img src="./images/image.png" alt="img">
+        </div>
+
+      </div>
+      <p class="footer__copyright">
+        Copyright © 2020 Shop Pty. Ltd.
+      </p>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>
